@@ -3,6 +3,9 @@ const Customer = db.customer;
 const config = require("../config/auth.config");
 const Op = db.Sequelize.Op;
 
+var jwt = require("jsonwebtoken");
+var bcrypt = require("bcryptjs");
+
 exports.all = (req, res) => {
     Customer.findAll()
         .then((customer) => {
